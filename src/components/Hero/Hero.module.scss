@@ -1,0 +1,86 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #2d010c;
+  background: radial-gradient(at left top, #2d010c, #0d0d0d);
+
+  /* Adjustments for mobile devices */
+  @media (max-width: 768px) {
+    height: 100vh; /* Adjust height to be auto for smaller screens */
+    padding-top: 4rem; /* Add padding to the top */
+    padding-bottom: 4rem; /* Add padding to the bottom */
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 4rem;
+
+    /* Adjustments for mobile devices */
+    @media (max-width: 768px) {
+      flex-direction: column; /* Change to column layout for smaller screens */
+      align-items: flex-start; /* Align items to the start */
+      margin-inline: 2rem; /* Reduce margin */
+      margin-top: 2rem; /* Reduce margin */
+    }
+  }
+
+  &__body {
+    margin-inline: 4rem;
+    height: calc(85vh);
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 4rem;
+    width: calc(100% - 8rem);
+    transform: translateY(-50%);
+    margin-bottom: 8rem;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+    gap: 3.2rem;
+    font-size: 16rem;
+
+    /* Adjustments for mobile devices */
+    @media (max-width: 768px) {
+      position: static; /* Change position to static for smaller screens */
+      width: auto; /* Adjust width to auto for smaller screens */
+      margin: 0; /* Remove margin */
+      text-align: center; /* Center align text */
+      font-size: 8rem; /* Reduce font size for smaller screens */
+    }
+  }
+
+  &__line {
+    display: inline-block;
+    height: 0.4rem;
+    width: 100%;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: center center;
+  }
+
+  &__image {
+    overflow: hidden;
+    position: absolute;
+    bottom: -10vh;
+    left: 0;
+    width: 100%;
+    transform-origin: top center;
+  }
+
+  &__imageOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background-color: black;
+    transform: scaleY(0.31);
+    transform-origin: bottom center;
+  }
+}
