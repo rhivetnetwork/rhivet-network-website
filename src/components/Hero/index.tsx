@@ -28,7 +28,7 @@ const ModalMenu = ({ isOpen, onClose }: any) => (
       isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
     }`}
   >
-    <div className="w-full max-w-screen-lg h-3/5 bg-transparent z-50 shadow-2xl p-8 overflow-y-auto border border-white backdrop-filter backdrop-blur-2xl bg-opacity-10">
+    <div className="w-full max-w-screen-lg h-7/10 bg-transparent z-50 shadow-2xl p-8 overflow-y-auto border border-white backdrop-filter backdrop-blur-2xl bg-opacity-10">
       <div className="flex justify-end relative">
         <button
           onClick={onClose}
