@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,6 +32,33 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-size: clamp(16px, 1.6rem, 1.6rem);
+  font-family: "Matter Regular", sans-serif;
+
+  font-style: normal;
+  font-variation-settings: "ital" 0, "wght" 400;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  letter-spacing: -0.03em;
+}
+
+[data-hidden] {
+  opacity: 0;
+}
+
+h1 {
+  font-size: 16rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
 
 @layer utilities {
