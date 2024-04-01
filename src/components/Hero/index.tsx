@@ -3,19 +3,22 @@ import { gsap } from "gsap";
 import Image from "next/image";
 import heroSectionImage3 from "../../../public/images/cybersecurity-3.jpg";
 import heroSectionImage1 from "../../../public/images/cybersecurity-1.jpg";
+import { CgMenuRound } from "react-icons/cg";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 import styles from "./Hero.module.scss";
 import { animateTitle, animateImage, revealMenu } from "./animations";
 
 import Logo from "@/components/Logo";
 import Button from "../Button";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const MenuIcon = ({ onClick }: any) => (
   <button
     onClick={onClick}
     className="focus:outline-none flexs flex-row justify-center items-center"
   >
-    MENU
+    <span className=" text-xl">Menu</span>
   </button>
 );
 
@@ -25,32 +28,37 @@ const ModalMenu = ({ isOpen, onClose }: any) => (
       isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
     }`}
   >
-    <div className="w-full max-w-screen-lg h-1/2 bg-white z-50 shadow-lg p-8 overflow-y-auto">
-      <div className="flex justify-end">
+    <div className="w-full max-w-screen-lg h-3/5 bg-transparent z-50 shadow-2xl p-8 overflow-y-auto border border-white backdrop-filter backdrop-blur-2xl bg-opacity-10">
+      <div className="flex justify-end relative">
         <button
           onClick={onClose}
-          className="text-2xl text-black focus:outline-none hover:text-gray-500 "
+          className="text-3xl text-black focus:outline-none hover:text-gray-500 absolute top-0 right-0"
         >
-          CLOSE
+          <AiFillCloseCircle className="text-white" />
         </button>
       </div>
-      <nav>
+      <nav className="ml-10">
         <ul className="space-y-4">
           <li>
-            <a
-              href="#"
-              className="text-5xl text-black font-semibold hover:text-red-700"
-            >
-              ABOUT
-            </a>
+            <Button
+              id="aboutUs"
+              text="About"
+              icon={<FiArrowUpRight className="h-10 w-10" />}
+            />
           </li>
           <li>
-            <a
-              href="#"
-              className="text-5xl text-black font-semibold hover:text-red-700"
-            >
-              CONTACTS
-            </a>
+            <Button
+              id="aboutUs"
+              text="Services"
+              icon={<FiArrowUpRight className="h-10 w-10" />}
+            />
+          </li>
+          <li>
+            <Button
+              id="aboutUs"
+              text="Say Hello"
+              icon={<FiArrowUpRight className="h-10 w-10" />}
+            />
           </li>
         </ul>
       </nav>
@@ -140,7 +148,12 @@ const Hero = () => {
               enterprises.
             </h4>
           </div>
-          <Button id="hero__body__left__btn" text="Get in touch" />
+          <Button
+            id="hero__body__left__btn"
+            text="Get in touch"
+            icon={<FiArrowUpRight className="h-10 w-10" />}
+            customStyles={"border-b border-current"}
+          />
         </div>
         <div
           id="hero__body__right"
