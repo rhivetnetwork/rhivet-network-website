@@ -1,0 +1,46 @@
+.about__us {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  filter: grayscale(100%); // Default to grayscale
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/services.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%); // Default to grayscale
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 400px; // Width of the colored circle
+      height: 400px; // Height of the colored circle
+      border-radius: 50%;
+      background-image: url("/images/services.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: none; // No grayscale for the colored circle
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition: filter 0.3s;
+      mix-blend-mode: multiply; // For smooth blending
+    }
+  }
+}
+
+.our__team__image {
+  filter: grayscale(100%);
+  transition: filter 1s ease-out;
+}
+
+.our__team__image:hover {
+  filter: grayscale(0%);
+  transition: filter 5s ease-in;
+}

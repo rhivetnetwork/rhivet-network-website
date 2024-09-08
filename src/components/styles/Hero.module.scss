@@ -1,17 +1,17 @@
 .hero {
-  background-image: url("/images/background.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
   height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background: #2d010c;
+  background: radial-gradient(at left top, #2d010c, #0d0d0d);
 
+  /* Adjustments for mobile devices */
   @media (max-width: 768px) {
-    height: 100vh;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    height: 100vh; /* Adjust height to be auto for smaller screens */
+    padding-top: 4rem; /* Add padding to the top */
+    padding-bottom: 4rem; /* Add padding to the bottom */
   }
 
   &__top {
@@ -20,16 +20,18 @@
     align-items: center;
     margin-inline: 4rem;
 
+    /* Adjustments for mobile devices */
     @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-inline: 2rem;
-      margin-top: 2rem;
+      flex-direction: column; /* Change to column layout for smaller screens */
+      align-items: flex-start; /* Align items to the start */
+      margin-inline: 2rem; /* Reduce margin */
+      margin-top: 2rem; /* Reduce margin */
     }
   }
 
   &__body {
-    height: calc(100vh - 5rem);
+    margin-inline: 4rem;
+    height: calc(85vh);
   }
 
   &__title {

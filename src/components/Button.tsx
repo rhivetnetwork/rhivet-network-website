@@ -1,14 +1,15 @@
-import React, { Component } from "react";
+import Link from "next/link";
+import React, { Component, ReactNode } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 
 type ButtonProps = {
   id?: string;
   onClick?: any;
-  customStyles?: any;
+  customStyles?: string;
   textStyle?: any;
   text: string;
-  link?: string;
-  icon?: any;
+  icon?: ReactNode;
+  customButtonStyle?: StyleSheet;
 };
 
 function Button({
@@ -17,22 +18,22 @@ function Button({
   customStyles,
   textStyle,
   text,
-  link,
   icon,
 }: ButtonProps) {
   const handleClick = () => {
     onClick;
   };
   return (
-    <a
-      href={link}
+    <div
       id={id}
       onClick={handleClick}
-      className={`focus:outline-none focus:ring active:text-red-700 my-10 hover:cursor-pointer flex flex-row gap-3   ${customStyles}`}
+      className={`focus:outline-none focus:ring active:text-red-700 my-10 hover:cursor-pointer flex flex-row items-center gap-3 ${customStyles}`}
     >
-      <span className={`text-4xl relative ${textStyle}`}>{text}</span>
+      <span className={`text-4xl text-white relative ${textStyle}`}>
+        {text}
+      </span>
       {icon}
-    </a>
+    </div>
   );
 }
 

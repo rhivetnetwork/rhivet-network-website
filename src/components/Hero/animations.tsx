@@ -1,39 +1,20 @@
 import { gsap } from "gsap";
-import { SplitText } from "gsap-trial/SplitText";
-
-gsap.registerPlugin(SplitText);
 
 export const animateTitle = () => {
-  let titleSplit = new SplitText("#hero__title", { type: "chars" });
-
   const tl = gsap.timeline({
     defaults: {
       ease: "expo.out",
     },
   });
 
-  tl.from(titleSplit.chars, {
-    yPercent: 130,
+  tl.from("#hero__body", {
+    autoAlpha: 0,
+    delay: 2,
+    y: 100,
     stagger: 0.5,
-    duration: 2,
-  })
-    .to("#hero__title", {
-      fontSize: "3rem", // Reduce font size to 1.5rem
-      duration: 3,
-      ease: "expo.out",
-    })
-    .from(".menu__button", {
-      autoAlpha: 0,
-      duration: 2,
-      ease: "bounce.in",
-    })
-    .from("#hero__body", {
-      autoAlpha: 0,
-      y: 50,
-      stagger: 0.5,
-      duration: 2,
-      ease: "expo.out",
-    });
+    duration: 5,
+    ease: "expo.out",
+  });
 
   return tl;
 };

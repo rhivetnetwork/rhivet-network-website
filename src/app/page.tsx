@@ -5,7 +5,8 @@ import { gsap } from "gsap";
 
 import Loader from "@/components/Loader";
 import Hero from "@/components/Hero";
-import LandingPage from "./LandingPage";
+import HomeScreen from "./HomeScreen";
+import CustomCursor from "@/components/CustomCursor/CustomCursor";
 
 const Home = () => {
   const [loaderFinished, setLoaderFinished] = useState(false);
@@ -24,7 +25,8 @@ const Home = () => {
 
   return (
     <main>
-      {loaderFinished ? <LandingPage /> : <Loader timeline={timeline} />}
+      <CustomCursor />
+      {loaderFinished ? <HomeScreen /> : <Loader timeline={timeline} />}
     </main>
   );
 };
